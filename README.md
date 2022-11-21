@@ -58,8 +58,8 @@ This is a demo project which allows company to see customer information. It is d
 	* Defined the concurrency token in both Customer and Note entity, it is handled in native database level(another option of Application-managed concurrency tokens is in app level:https://learn.microsoft.com/en-us/ef/core/saving/concurrency?tabs=data-annotations)
 
 		
-	[Timestamp]
-        public byte[] Version { get; set; }
+		[Timestamp]
+        	public byte[] Version { get; set; }
 		
 		
 	* The corresponding exception "DbUpdateConcurrencyException" is handled in JsonExceptionFilter filter, it will return http status code 409 to inform front end for updating conflict.
