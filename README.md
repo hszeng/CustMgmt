@@ -47,7 +47,7 @@ This is a demo project which allows company to see customer information. It is d
 	+ If you are using "IIS Express" or self-hosted option to do the debug, then you are ready to go.
 	+ If you are using "Docker" option to do the debugging, you need to update the ConnectionStrings.DefaultConnection in appSettings.json -- Replace the “localhost” to the actual SQL server Ip address. 
   - Swagger UI
-	![Swagger](CustMgmtSwagger.png)
+	![Swagger](https://github.com/hszeng/CustMgmt/blob/main/CustMgmtSwagger.PNG)
 
 # Key Implementations In this Demo Project
 
