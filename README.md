@@ -10,14 +10,14 @@ This is a demo project which allows company to see customer information. It is d
  - AutoMapper 8.1.1
  - Visual Studio 2019 Community 
 
-# How To Build and Run this Demo Project:*
+# How To Build and Run this Demo Project:
 
   - Clone this repo to you local
   - Open the "CustMgmt.sln" solution with Visual Studio 2019
   - Create a database "CustMgmt" on your SQL server . 
   - Run the following script in this database to add new login user
 
-		```
+		
 		USE master
 		GO
 		CREATE LOGIN demouser WITH PASSWORD = 'demouser@CustMgmt'
@@ -32,15 +32,15 @@ This is a demo project which allows company to see customer information. It is d
 			EXEC sp_addrolemember N'db_owner', N'demouser'
 		END;
 		GO
-		```
+		
 
   - Update the "ConnectionStrings.DefaultConnection" with the connection string to this new created database in the "appsettings.json" file under the "CustMgmt" project
   - Build the solution in your Visual Studio.
   - Open the "Package Manager Console" in your Visual Studio, then execute the following command in this console
 
-  		```
+  		
 		Update-Database
-		```
+		
 
   - Run Debugging in your Visual Studio. It will automatically open the Swagger UI.
 
@@ -57,10 +57,10 @@ This is a demo project which allows company to see customer information. It is d
   - Demostrated how to use the optimistic locking when modify an entity
 	* Defined the concurrency token in both Customer and Note entity, it is handled in native database level(another option of Application-managed concurrency tokens is in app level:https://learn.microsoft.com/en-us/ef/core/saving/concurrency?tabs=data-annotations)
 
-		```
-		[Timestamp]
+		
+	[Timestamp]
         public byte[] Version { get; set; }
-		```
+		
 		
 	* The corresponding exception "DbUpdateConcurrencyException" is handled in JsonExceptionFilter filter, it will return http status code 409 to inform front end for updating conflict.
   - This project took me about 8 hours to complete, which included at least 2 hours in testing.
